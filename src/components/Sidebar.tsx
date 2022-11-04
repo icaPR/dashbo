@@ -15,13 +15,13 @@ export function Sidebar() {
             GERAL
           </Text>
           <Stack spacing="4" mt="8" align="stretch">
-            <Link display="flex" color="pink.400">
+            <Link display="flex" alignItems="center" color="pink.400">
               <Icon as={RiDashboardLine} fontSize="20" />
               <Text ml="4" fontWeight="medium">
                 Dasboard
               </Text>
             </Link>
-            <Link display="flex" color="pink.400">
+            <Link display="flex" alignItems="center" color="pink.400">
               <Icon as={RiContactsLine} fontSize="20" />
               <Text ml="4" fontWeight="medium">
                 Usuários
@@ -34,13 +34,13 @@ export function Sidebar() {
             AUTOMAÇÃO
           </Text>
           <Stack spacing="4" mt="8" align="stretch">
-            <Link display="flex" color="pink.400">
+            <Link display="flex" alignItems="center" color="pink.400">
               <Icon as={RiInputMethodLine} fontSize="20" />
               <Text ml="4" fontWeight="medium">
                 Formularios
               </Text>
             </Link>
-            <Link display="flex" color="pink.400">
+            <Link display="flex" alignItems="center" color="pink.400">
               <Icon as={RiGitMergeLine} fontSize="20" />
               <Text ml="4" fontWeight="medium">
                 Automação
