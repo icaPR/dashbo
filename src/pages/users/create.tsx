@@ -14,8 +14,7 @@ import { Header } from "../../components/Header";
 import { Sidebar } from "../../components/Sidebar";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm, SubmitHandler } from "react-hook-form";
-import { format, resolve } from "path";
+import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
 
 type CreateUserFormData = {
   name: string;
@@ -45,9 +44,7 @@ export default function CreateUser() {
     resolver: yupResolver(createUserFormSchema),
   });
 
-  const handleCreateUsers: SubmitHandler<CreateUserFormData> = async (
-    values
-  ) => {
+  const handleCreateUsers: SubmitHandler<FieldValues> = async (values) => {
     await new Promise((resolve) => setTimeout(resolve, 2000));
     console.log(values);
   };
@@ -72,13 +69,11 @@ export default function CreateUser() {
           <VStack spacing={["6", "8"]}>
             <SimpleGrid minChildWidth="240px" spacing={["6", "8"]} w="100%">
               <Input
-                name="name"
                 label="Nome completo"
                 error={errors.name}
                 {...register("name")}
               />
               <Input
-                name="email"
                 type="email"
                 label="E-mail"
                 error={errors.email}
@@ -87,14 +82,12 @@ export default function CreateUser() {
             </SimpleGrid>
             <SimpleGrid minChildWidth="240px" spacing={["6", "8"]} w="100%">
               <Input
-                name="password"
                 type="password"
                 label="Senha"
                 error={errors.password}
                 {...register("password")}
               />
               <Input
-                name="password_confirmation"
                 type="password"
                 label="Confirmar senha"
                 error={errors.password_confirmation}
